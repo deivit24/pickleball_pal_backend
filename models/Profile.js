@@ -29,7 +29,7 @@ const ProfileSchema = new mongoose.Schema({
       lng: { type: Number },
     },
   ],
-  years_playing: { type: Number },
+
   places: [
     {
       name: {

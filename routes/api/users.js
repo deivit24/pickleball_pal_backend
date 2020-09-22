@@ -1,26 +1,28 @@
 const express = require('express');
 const ExpressError = require('../../helpers/expressError');
 const { validationResult } = require('express-validator');
+const { userValidators } = require('../../validators/users');
 const bcrypt = require('bcrypt');
 const router = new express.Router();
-const { userValidators } = require('../../validators/users');
 const { isAuth } = require('../../middleware/auth');
 const createToken = require('../../helpers/createToken');
 const User = require('../../models/User');
-
 const gravatar = require('gravatar');
 const normalize = require('normalize-url');
-
 const cloudinary = require('cloudinary').v2;
 
+// Cloudinary set up for saving images
 const CLOUDINARY_API_KEY = process.env.CLOUDINARY_API_KEY;
 const CLOUDINARY_API_SECRET = process.env.CLOUDINARY_API_SECRET;
+
 cloudinary.config({
   cloud_name: 'dptksyqdf',
   api_key: CLOUDINARY_API_KEY,
   api_secret: CLOUDINARY_API_SECRET,
 });
+
 const BCRYPT_WORK_FACTOR = 10;
+
 //POST ROUTE api/users
 //Register user
 router.post('/', userValidators, async (req, res, next) => {

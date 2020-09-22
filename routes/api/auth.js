@@ -12,7 +12,7 @@ const createToken = require('../../helpers/createToken');
 router.get('/', isAuth, async (req, res, next) => {
   try {
     const user = await User.findById(req.user.id).select('-password');
-    console.log(req.user);
+
     res.json(user);
   } catch (e) {
     next(e);
@@ -45,7 +45,7 @@ router.post('/', loginValidators, async (req, res, next) => {
     //return JSONWEBTOKEN
 
     const token = createToken(user, '5d');
-    console.log(user);
+
     return res.status(201).json({ token });
   } catch (e) {
     return next(e);

@@ -6,6 +6,6 @@ const { PORT } = require('./config/config');
 //Connect Database
 connectDB();
 
-app.listen(PORT, function () {
+app.listen(PORT, () => {
   console.log(`Server starting on port ${PORT}!`);
 });

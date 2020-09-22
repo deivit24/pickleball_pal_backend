@@ -26,7 +26,7 @@ app.use('/api/profile', profileRoutes);
 app.use('/api/auth', authRoutes);
 /** 404 handler */
 
-app.use(function (req, res, next) {
+app.use((req, res, next) => {
   const err = new Error('Not Found');
   err.status = 404;
 
@@ -36,7 +36,7 @@ app.use(function (req, res, next) {
 
 /** general error handler */
 
-app.use(function (err, req, res, next) {
+app.use((err, req, res, next) => {
   if (err.stack) console.log(err.stack);
 
   res.status(err.status || 500);

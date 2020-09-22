@@ -13,11 +13,4 @@ placesValidators = [
   check('location', 'Location is required').not().isEmpty(),
 ];
 
-locationValidators = [
-  check('zip', 'Please enter valid zip code').isLength({
-    min: 5,
-    max: 5,
-  }),
-];
-
-module.exports = { profileValidators, placesValidators, locationValidators };
+module.exports = { profileValidators, placesValidators };

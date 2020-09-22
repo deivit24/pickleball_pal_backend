@@ -9,11 +9,10 @@ const { validationResult } = require('express-validator');
 const {
   profileValidators,
   placesValidators,
-  locationValidators,
 } = require('../../validators/profile');
 const User = require('../../models/User');
 const ExpressError = require('../../helpers/expressError');
-const profile = require('../../validators/profile');
+
 const NodeGeocoder = require('node-geocoder');
 const normalize = require('normalize-url');
 
@@ -35,6 +34,7 @@ cloudinary.config({
   api_secret: CLOUDINARY_API_SECRET,
 });
 let geocoder = NodeGeocoder(options);
+
 //GET ROUTE api/profile/me
 //Get current users profile
 router.get('/me', isAuth, async (req, res, next) => {
@@ -53,7 +53,7 @@ router.get('/me', isAuth, async (req, res, next) => {
 });
 
 //GET ROUTE api/profile/messages
-//Get current users profile
+//Get current users messages
 router.get('/messages', isAuth, async (req, res, next) => {
   try {
     const conversation = await Conversation.find({
@@ -156,21 +156,7 @@ router.post('/', isAuth, profileValidators, async (req, res, next) => {
         socialfields[key] = normalize(value, { forceHttps: true });
     }
     profileFields.social = socialfields;
-    // let profile = await Profile.findOne({ user: req.user.id });
-    // if (profile) {
-    //   //update
-    //   profile = await Profile.findOneAndUpdate(
-    //     { user: req.user.id },
-    //     { $set: profileFields },
-    //     { new: true, upsert: true }
-    //   );
 
-    //   return res.json(profile);
-    // }
-
-    // // create
-    // profile = new Profile(profileFields);
-    // await profile.save();
     let profile = await Profile.findOneAndUpdate(
       { user: req.user.id },
       { $set: profileFields },
@@ -239,8 +225,6 @@ router.get('/user/:user_id', async (req, res, next) => {
 
 router.delete('/', isAuth, async (req, res, next) => {
   try {
-    console.log(req.user);
-
     await Post.deleteMany({ user: req.user.id });
     await Messages.deleteMany({ user: req.user.id });
     await Profile.findOneAndRemove({ user: req.user.id });
@@ -343,7 +327,6 @@ router.post('/:user_id', isAuth, async (req, res, next) => {
 
     return res.json(message);
   } catch (e) {
-    console.log(e);
     if (e.kind == 'ObjectId') {
       return res.status(400).json({
         error: { msg: 'profile not found' },
@@ -396,50 +379,3 @@ router.post('/user/:user_id/conversation', isAuth, async (req, res, next) => {
     next(e);
   }
 });
-
-//POST Route api/profile/user/:user_id
-//Post a message
-
-// router.post(
-//   '/user/:user_id/conversation/new',
-//   isAuth,
-//   async (req, res, next) => {
-//     try {
-//       const user = await User.findById(req.user.id).select('-password');
-//       const profile = await Profile.findOne({
-//         user: req.params.user_id,
-//       }).populate('user', ['first_name', 'last_name', 'avatar']);
-
-//       if (!profile) {
-//         throw new ExpressError(`There is no profile for this user`, 400);
-//       }
-
-//       const conversation = await Conversation.findOne({
-//         members: {
-//           $elemMatch: { users: req.params.user_id, users: req.user.id },
-//         },
-//       });
-//       if (!conversation) {
-//         throw new ExpressError(`Sorry there is no conversation yet`, 400);
-//       }
-//       const newMessage = new Messages({
-//         conversation_id: conversation._id,
-//         message: req.body.message,
-//         sender_id: req.user.id,
-//         first_name: user.first_name,
-//         last_name: user.last_name,
-//         avatar: user.avatar,
-//       });
-//       const message = await newMessage.save();
-
-//       return res.json(message);
-//     } catch (e) {
-//       if (e.kind == 'ObjectId') {
-//         return res.status(400).json({
-//           error: { msg: 'profile not found' },
-//         });
-//       }
-//       next(e);
-//     }
-//   }
-// );

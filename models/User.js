@@ -18,11 +18,7 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Password is required'],
   },
-  // zip_code: {
-  //   type: Number,
-  //   required: [true, 'Postal Code is required'],
-  //   unique: false,
-  // },
+
   avatar: {
     type: String,
   },
