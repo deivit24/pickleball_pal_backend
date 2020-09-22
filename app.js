@@ -4,6 +4,13 @@ const cors = require('cors');
 app.use(express.json());
 app.use(cors());
 
+const fileupload = require('express-fileupload');
+
+app.use(
+  fileupload({
+    useTempFiles: true,
+  })
+);
 const morgan = require('morgan');
 app.use(morgan('tiny'));
 

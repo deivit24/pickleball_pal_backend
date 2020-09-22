@@ -1,10 +1,16 @@
 const mongoose = require('mongoose');
-const mongoose_fuzzy_searching = require('mongoose-fuzzy-searching-v2/index.js');
+
+const default_img =
+  'https://icon-library.com/images/default-user-icon/default-user-icon-4.jpg';
 
 const ProfileSchema = new mongoose.Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'user',
+  },
+  image: {
+    type: String,
+    default: default_img,
   },
   gender: { type: String },
   level: { type: String },
@@ -44,7 +50,4 @@ const ProfileSchema = new mongoose.Schema({
   date: { type: String, default: Date.now },
 });
 
-ProfileSchema.plugin(mongoose_fuzzy_searching, {
-  fields: ['gender'],
-});
 module.exports = Profile = mongoose.model('profile', ProfileSchema);

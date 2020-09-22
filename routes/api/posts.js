@@ -18,12 +18,15 @@ router.post('/', isAuth, postValidators, async (req, res, next) => {
       throw new ExpressError(errors.array(), 400);
     }
     const user = await User.findById(req.user.id).select('-password');
+    const profile = await Profile.findOne({
+      user: req.user.id,
+    }).select('location');
 
     const newPost = new Post({
       text: req.body.text,
       first_name: user.first_name,
       last_name: user.last_name,
-      zip_code: user.zip_code,
+      location: profile.location[0].location,
       avatar: user.avatar,
       user: req.user.id,
     });
@@ -39,7 +42,29 @@ router.post('/', isAuth, postValidators, async (req, res, next) => {
 //Get All post
 router.get('/', isAuth, async (req, res, next) => {
   try {
-    const posts = await Post.find().sort({ date: -1 });
+    const { search } = req.query;
+    let postSearch = {
+      location: new RegExp(search, 'i'),
+    };
+    let posts;
+    if (search) {
+      posts = await Post.find(postSearch).sort({ date: -1 });
+    } else {
+      posts = await Post.find().sort({
+        date: -1,
+      });
+    }
+    console.log(posts);
+
+    return res.json(posts);
+  } catch (e) {
+    next(e);
+  }
+});
+
+router.get('/user', isAuth, async (req, res, next) => {
+  try {
+    const posts = await Post.find({ user: req.user.id }).sort({ date: -1 });
     return res.json(posts);
   } catch (e) {
     next(e);

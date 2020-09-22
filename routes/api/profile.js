@@ -4,6 +4,7 @@ const { isAuth } = require('../../middleware/auth');
 const Profile = require('../../models/Profile');
 const Messages = require('../../models/Messages');
 const Conversation = require('../../models/Conversation');
+const Post = require('../../models/Post');
 const { validationResult } = require('express-validator');
 const {
   profileValidators,
@@ -15,8 +16,10 @@ const ExpressError = require('../../helpers/expressError');
 const profile = require('../../validators/profile');
 const NodeGeocoder = require('node-geocoder');
 const normalize = require('normalize-url');
-const config = require('config');
-const GEOCODE_API_KEY = config.get('GEOCODE_API_KEY');
+
+const GEOCODE_API_KEY = process.env.GEOCODE_API_KEY;
+const CLOUDINARY_API_KEY = process.env.CLOUDINARY_API_KEY;
+const CLOUDINARY_API_SECRET = process.env.CLOUDINARY_API_SECRET;
 
 let options = {
   provider: 'google',
@@ -25,6 +28,12 @@ let options = {
   formatter: null,
 };
 
+const cloudinary = require('cloudinary').v2;
+cloudinary.config({
+  cloud_name: 'dptksyqdf',
+  api_key: CLOUDINARY_API_KEY,
+  api_secret: CLOUDINARY_API_SECRET,
+});
 let geocoder = NodeGeocoder(options);
 //GET ROUTE api/profile/me
 //Get current users profile
@@ -231,6 +240,9 @@ router.get('/user/:user_id', async (req, res, next) => {
 router.delete('/', isAuth, async (req, res, next) => {
   try {
     console.log(req.user);
+
+    await Post.deleteMany({ user: req.user.id });
+    await Messages.deleteMany({ user: req.user.id });
     await Profile.findOneAndRemove({ user: req.user.id });
 
     await User.findOneAndRemove({ _id: req.user.id });
