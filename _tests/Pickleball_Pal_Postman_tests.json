@@ -1,0 +1,2101 @@
+{
+  "info": {
+    "_postman_id": "3846c31e-7071-4ec1-9c42-6834d8fe7ae0",
+    "name": "Pickleball_Pal_Test",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Register User Fail",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "da0ce78e-5bdd-458c-a3d8-6aac262e762f",
+            "exec": [
+              "pm.test('Registration should FAIL', () => {\r",
+              "    pm.response.to.have.status(400)\r",
+              "})"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "type": "text",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTIxZWM1OTRkYjkyNDUyNmM0MTNkNTYiLCJpYXQiOjE1OTQ4MzE3MjQsImV4cCI6MTU5NDkxODEyNH0.czfJXgzQb1-8WrbpUN2ZeMOYtv1dhrdIYucZ678TEhg",
+            "disabled": true
+          },
+          {
+            "key": "x-auth-token",
+            "type": "text",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMTI3OWJlM2FjMjNlMDMzY2IwODJjNiIsImlhdCI6MTU5NTA0NjMzNCwiZXhwIjoxNTk1MDQ5OTM0fQ.BlxBmJ3ZFlBbSbVIuvOSttj-08oODEmQxk7b-ulPtqU"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "     {\r\n    \"first_name\": \"postman\",\r\n      \"last_name\": \"test\",\r\n      \"email\": \"postman.testhotmail.com\",\r\n      \"password\": \"david1991\"\r\n      \r\n    }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/users",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "users"],
+          "query": [
+            {
+              "key": "search",
+              "value": "app",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Register User Pass",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "e3a8071f-f8f1-4a7b-88f4-e1e5b3d9d64c",
+            "exec": [
+              "pm.test('Registration should PASS', () => {\r",
+              "    pm.response.to.have.status(201)\r",
+              "})"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "type": "text",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTIxZWM1OTRkYjkyNDUyNmM0MTNkNTYiLCJpYXQiOjE1OTQ4MzE3MjQsImV4cCI6MTU5NDkxODEyNH0.czfJXgzQb1-8WrbpUN2ZeMOYtv1dhrdIYucZ678TEhg",
+            "disabled": true
+          },
+          {
+            "key": "x-auth-token",
+            "type": "text",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMTI3OWJlM2FjMjNlMDMzY2IwODJjNiIsImlhdCI6MTU5NTA0NjMzNCwiZXhwIjoxNTk1MDQ5OTM0fQ.BlxBmJ3ZFlBbSbVIuvOSttj-08oODEmQxk7b-ulPtqU"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "   {\r\n    \"first_name\": \"postman\",\r\n      \"last_name\": \"test\",\r\n      \"email\": \"{{email}}\",\r\n      \"password\": \"{{password}}\"\r\n      \r\n    }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/users",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "users"],
+          "query": [
+            {
+              "key": "search",
+              "value": "app",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login User Fail",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "6ad372aa-9121-471e-99b1-614670782664",
+            "exec": [
+              "pm.test('Login should FAIL', () => {\r",
+              "    pm.response.to.have.status(401)\r",
+              "})"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n      \"email\": \"postman.test@hotmail.com\",\r\n      \"password\": \"david1992\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/auth",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "auth"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login User Pass",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "80d0f3aa-fadc-44fb-bafc-f493d54b5950",
+            "exec": [
+              "pm.test('Login should PASS', () => {\r",
+              "    pm.response.to.have.status(200)\r",
+              "});\r",
+              "\r",
+              "pm.test('Has a token', () => {\r",
+              "    const data = pm.response.json()\r",
+              "    pm.environment.set('token', data.token)\r",
+              "    return 'token' in data\r",
+              "});\r",
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "type": "text",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n       \"email\": \"{{email}}\",\r\n      \"password\": \"{{password}}\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/auth",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "auth"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Register User2 Pass",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "96901332-877b-463c-b6e3-3ba052db836d",
+            "exec": [
+              "pm.test('Register Second User should PASS', () => {\r",
+              "    pm.response.to.have.status(201)\r",
+              "});\r",
+              "\r",
+              "pm.test('Has a token', () => {\r",
+              "    const data = pm.response.json()\r",
+              "    pm.environment.set('token2', data.token)\r",
+              "    return 'token' in data\r",
+              "});\r",
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "type": "text",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTIxZWM1OTRkYjkyNDUyNmM0MTNkNTYiLCJpYXQiOjE1OTQ4MzE3MjQsImV4cCI6MTU5NDkxODEyNH0.czfJXgzQb1-8WrbpUN2ZeMOYtv1dhrdIYucZ678TEhg",
+            "disabled": true
+          },
+          {
+            "key": "x-auth-token",
+            "type": "text",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMTI3OWJlM2FjMjNlMDMzY2IwODJjNiIsImlhdCI6MTU5NTA0NjMzNCwiZXhwIjoxNTk1MDQ5OTM0fQ.BlxBmJ3ZFlBbSbVIuvOSttj-08oODEmQxk7b-ulPtqU",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "   {\r\n    \"first_name\": \"postman2\",\r\n      \"last_name\": \"test2\",\r\n      \"email\": \"{{email2}}\",\r\n      \"password\": \"{{password}}\"\r\n      \r\n    }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/users",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "users"],
+          "query": [
+            {
+              "key": "search",
+              "value": "app",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Auth User Fail",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "22999692-63f8-4333-bbb7-dae1e015a7e9",
+            "exec": [
+              "pm.test('Get Auth should FAIL', () => {\r",
+              "    pm.response.to.have.status(401)\r",
+              "});\r",
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-auth-token",
+            "value": "eyJhsdfssdcscdcdcs",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/auth",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "auth"],
+          "query": [
+            {
+              "key": "search",
+              "value": "app",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Auth User Pass",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "ae994b5c-4cd7-4500-bc54-6deb353603ee",
+            "exec": [
+              "pm.test('Get Auth should PASS', () => {\r",
+              "    pm.response.to.have.status(200)\r",
+              "    const data = pm.response.json()\r",
+              "    pm.environment.set('user_id', data._id)\r",
+              "    return '_id' in data\r",
+              "});\r",
+              "\r",
+              "\r",
+              "pm.test('Get Auth has an User ID', () => {\r",
+              "    const data = pm.response.json()\r",
+              "    pm.environment.set('user_id', data._id)\r",
+              "    return '_id' in data\r",
+              "});\r",
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-auth-token",
+            "value": "{{token}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/auth",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "auth"],
+          "query": [
+            {
+              "key": "search",
+              "value": "app",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create and Update Profile Fail",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "e583414c-82ac-4a05-8ffa-f832d37da0e7",
+            "exec": [
+              "pm.test('Create and Edit Profile should Fail', () => {\r",
+              "    pm.response.to.have.status(400)\r",
+              "});\r",
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "x-auth-token",
+            "value": "{{token}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \r\n    \"years_playing\": 15,\r\n    \"gender\": \"male\",\r\n    \"bio\": \"my name is david salazar I like pickleball\",\r\n    \"active\": true,\r\n    \"playing_style\": \"I like to hit the ball hard\",\r\n    \"facebook\": \"www.facebook.com\",\r\n    \"instagram\": \"instagram\",\r\n    \"linkedin\": \"linkedin\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/profile",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "profile"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create and Update Profile Pass",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "7bb5f625-1559-4eff-94ff-332f50d1d5e5",
+            "exec": [
+              "pm.test('Create and Update Profile should PASS', () => {\r",
+              "    pm.response.to.have.status(200)\r",
+              "});\r",
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "x-auth-token",
+            "value": "{{token}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"level\" : 1.0,\r\n    \"years_playing\": 15,\r\n    \"gender\": \"male\",\r\n    \"bio\": \"my name is david salazar I like pickleball\",\r\n    \"active\": true,\r\n    \"playing_style\": \"I like to hit the ball hard\",\r\n    \"zip\": 78501,\r\n    \"facebook\": \"www.facebook.com\",\r\n    \"instagram\": \"instagram\",\r\n    \"linkedin\": \"linkedin\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/profile",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "profile"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create and Update Profile User2 Pass",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "d7698425-090d-4c01-b8c0-05ec4d9a0a97",
+            "exec": [
+              "pm.test('Create and Update Profile User2 should PASS', () => {\r",
+              "    pm.response.to.have.status(200)\r",
+              "});\r",
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "type": "text",
+            "value": "application/json"
+          },
+          {
+            "key": "x-auth-token",
+            "type": "text",
+            "value": "{{token2}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"level\" : 3.0,\r\n    \"years_playing\": 15,\r\n    \"gender\": \"male\",\r\n    \"bio\": \"my name is test two I like pickleball\",\r\n    \"active\": true,\r\n    \"playing_style\": \"I like to hit the ball hard\",\r\n    \"zip\": 78501,\r\n    \"facebook\": \"www.facebook.com\",\r\n    \"instagram\": \"instagram\",\r\n    \"linkedin\": \"linkedin\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/profile",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "profile"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Auth User2 Pass",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "3604fdf1-5b0d-49aa-899b-70664317588b",
+            "exec": [
+              "pm.test('Get Auth USER2 should PASS', () => {\r",
+              "    pm.response.to.have.status(200)\r",
+              "   \r",
+              "});\r",
+              "\r",
+              "\r",
+              "pm.test('Get Auth has User2 ID', () => {\r",
+              "    const data = pm.response.json()\r",
+              "    pm.environment.set('user2_id', data._id)\r",
+              "    return '_id' in data\r",
+              "});\r",
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-auth-token",
+            "type": "text",
+            "value": "{{token2}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/auth",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "auth"],
+          "query": [
+            {
+              "key": "search",
+              "value": "app",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Add Place Fail",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "98665104-0476-4759-aab0-922a9246a3bb",
+            "exec": [
+              "pm.test('Add Place should FAIL', () => {\r",
+              "    pm.response.to.have.status(400)\r",
+              "})"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "conte",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "x-auth-token",
+            "value": "{{token}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Westlake Highschool\",\r\n    \"location\": \"\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/profile/places",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "profile", "places"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Add Place Pass",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "54191274-8b8c-4d07-ad88-7712a09fb480",
+            "exec": [
+              "pm.test('Add Places should Pass', () => {\r",
+              "    pm.response.to.have.status(200)\r",
+              "})\r",
+              "pm.test('Has a Place', () => {\r",
+              "    const {places} = pm.response.json()\r",
+              "    pm.environment.set('place_id', places[0]._id)\r",
+              "    return '_id' in places[0]\r",
+              "});\r",
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "conte",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "x-auth-token",
+            "value": "{{token}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Westlake Highschool\",\r\n    \"location\": \"{{location}}\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/profile/places",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "profile", "places"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Logged in Users Profile Fail",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "9160c107-f370-486d-ba23-ff871367356d",
+            "exec": [
+              "pm.test('Get Users Profile should FAIL', () => {\r",
+              "    pm.response.to.have.status(401)\r",
+              "})"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-auth-token",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVC.eyJpZCI6IjVmNWNlNTY3NDI0ZGYyNzhlYzI0MmI0YyIsImlhdCI6MTYwMDgwNjI4MiwiZXhwIjoxNjAxMjM4MjgyfQ.fxOU7IbZwHktBA9nqoG27yRZfymdoIO0OHGuI0doaZE",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3001/api/profile/me",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "profile", "me"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Logged in Users Profile Pass",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "dd270ed9-a071-43ee-bf69-b444d5b4667c",
+            "exec": [
+              "pm.test('Get Users Profile should PASS', () => {\r",
+              "    pm.response.to.have.status(200)\r",
+              "})"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-auth-token",
+            "value": "{{token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3001/api/profile/me",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "profile", "me"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Profile by user ID Fail",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "6a3ce721-551f-4b56-97a7-e75e9e3f0425",
+            "exec": [
+              "pm.test('Get Profile by ID should FAIL', () => {\r",
+              "    pm.response.to.have.status(400)\r",
+              "});\r",
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3001/api/profile/user/fdfvddfv",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "profile", "user", "fdfvddfv"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Profile by user ID Pass",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "a86e7ce9-c15b-46d5-aba1-1712c4cae2dc",
+            "exec": [
+              "pm.test('Get Profile by ID should PASS', () => {\r",
+              "    pm.response.to.have.status(200)\r",
+              "});\r",
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3001/api/profile/user/{{user_id}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "profile", "user", "{{user_id}}"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Profile by user2 ID Pass",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "d5e2e614-b818-4a2e-88e7-a33c4686a13d",
+            "exec": [
+              "pm.test('Get Profile by ID should PASS', () => {\r",
+              "    pm.response.to.have.status(200)\r",
+              "});\r",
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3001/api/profile/user/{{user2_id}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "profile", "user", "{{user2_id}}"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Profiles Pass",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "b8c14d43-82dd-4bd6-a2b0-413138dcba7f",
+            "exec": [
+              "pm.test('Get All Profiles should PASS', () => {\r",
+              "    pm.response.to.have.status(200)\r",
+              "})"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3001/api/profile",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "profile"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create a New Post Fail",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "a9d9d060-c49c-4771-8700-5051fd987135",
+            "exec": [
+              "pm.test('Create a New Post should Fail', () => {\r",
+              "    pm.response.to.have.status(400)\r",
+              "})"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-auth-token",
+            "value": "{{token}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"text\": \"\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/posts",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "posts"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create a New Post Pass",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "486dc382-a4e8-4f42-9834-3863e6cb3ef5",
+            "exec": [
+              "pm.test('Create a New Post should Pass', () => {\r",
+              "    pm.response.to.have.status(201)\r",
+              "})\r",
+              "\r",
+              "pm.test('Has a Post', () => {\r",
+              "    const data = pm.response.json()\r",
+              "    pm.environment.set('post_id', data._id)\r",
+              "    return '_id' in data\r",
+              "});\r",
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-auth-token",
+            "value": "{{token}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"text\": \"Hello my name is Postman\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/posts",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "posts"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Posts Fail",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "eda7a449-9321-4969-837e-e62970d759a6",
+            "exec": [
+              "pm.test('Get All Posts should Fail', () => {\r",
+              "    pm.response.to.have.status(401)\r",
+              "})"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-auth-token",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNWNlNTY3NDI0ZGYyNzhlYzI0MmI0YyIsImlhdCI6RERERGMTYwMDgwOTU2MywiZXhwIjoxNjAxMjQxNTYzfQ.w73oECn_Y8PZLrpZamgPJf-XKAWqF6gYbYpRnw0KNRA",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/posts",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "posts"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Posts Pass",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "7de50519-1b15-46e2-bd1d-f63844123df3",
+            "exec": [
+              "pm.test('Get All Post should PASS', () => {\r",
+              "    pm.response.to.have.status(200)\r",
+              "})"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-auth-token",
+            "value": "{{token}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/posts",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "posts"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Post by ID Fail",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "8e5658a5-1714-4b04-ab86-5e75b2904293",
+            "exec": [
+              "pm.test('Get Post by ID should FAIL', () => {\r",
+              "    pm.response.to.have.status(404)\r",
+              "})"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-auth-token",
+            "value": "{{token}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/posts/5f6a6acea4a54004fb1a98",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "posts", "5f6a6acea4a54004fb1a98"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Post by ID PASS",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "8fb4f437-4a24-4160-9296-ba20b7081247",
+            "exec": [
+              "pm.test('Get Post by ID should PASS', () => {\r",
+              "    pm.response.to.have.status(200)\r",
+              "})"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-auth-token",
+            "type": "text",
+            "value": "{{token}}"
+          },
+          {
+            "key": "Content-Type",
+            "type": "text",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/posts/{{post_id}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "posts", "{{post_id}}"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Like a Post Fail",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "aa03b916-2a4c-4836-8b0f-8d71ec08ca36",
+            "exec": [
+              "pm.test('Like a Post should FAIL', () => {\r",
+              "    pm.response.to.have.status(500)\r",
+              "})"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "x-auth-token",
+            "value": "{{token}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/posts/like/5f6a6acesdfa4aa154004fb1a98",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "posts", "like", "5f6a6acesdfa4aa154004fb1a98"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Like a Post Pass",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "f706b0c1-4907-4a55-b15e-03223c2f8bc7",
+            "exec": [
+              "pm.test('Get Post by ID should PASS', () => {\r",
+              "    pm.response.to.have.status(200)\r",
+              "})"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "x-auth-token",
+            "value": "{{token}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/posts/like/{{post_id}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "posts", "like", "{{post_id}}"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Like a Post 2X Fail",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "28b867fb-6977-4095-957d-74553e5b68dd",
+            "exec": [
+              "pm.test('Like a Same Post Twice should FAIL', () => {\r",
+              "    pm.response.to.have.status(400)\r",
+              "})"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "type": "text",
+            "value": "application/json"
+          },
+          {
+            "key": "x-auth-token",
+            "type": "text",
+            "value": "{{token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/posts/like/{{post_id}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "posts", "like", "{{post_id}}"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Unlike  a Post Fail",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "86cc465c-c1c7-4060-b223-d87bdd8c7578",
+            "exec": [
+              "pm.test('Unlike a Post should Fail', () => {\r",
+              "    pm.response.to.have.status(500)\r",
+              "})"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "type": "text",
+            "value": "application/json"
+          },
+          {
+            "key": "x-auth-token",
+            "type": "text",
+            "value": "{{token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/posts/unlike/5f6a6acea4aaFD154004fb1a98",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "posts", "unlike", "5f6a6acea4aaFD154004fb1a98"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Unlike  a Post Pass",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "c15ec3a1-0d1f-48c3-a2eb-f8823278fa2f",
+            "exec": [
+              "pm.test('Unlike a Post should PASS', () => {\r",
+              "    pm.response.to.have.status(200)\r",
+              "})"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "type": "text",
+            "value": "application/json"
+          },
+          {
+            "key": "x-auth-token",
+            "type": "text",
+            "value": "{{token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/posts/unlike/{{post_id}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "posts", "unlike", "{{post_id}}"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create a Comment Fail",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "d6017ce0-bcc3-48ab-af76-81ecc38684fd",
+            "exec": [
+              "pm.test('Comment on a Post should FAIL', () => {\r",
+              "    pm.response.to.have.status(400)\r",
+              "})"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "type": "text",
+            "value": "application/json"
+          },
+          {
+            "key": "x-auth-token",
+            "type": "text",
+            "value": "{{token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"text\": \"\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/posts/comment/{{post_id}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "posts", "comment", "{{post_id}}"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create a Comment Pass",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "24ba0259-75a1-4e42-b589-0c82bba08928",
+            "exec": [
+              "pm.test('Comment on a Post should Pass', () => {\r",
+              "    pm.response.to.have.status(201)\r",
+              "})\r",
+              "\r",
+              "pm.test('Has a Comment', () => {\r",
+              "    const data = pm.response.json()\r",
+              "    pm.environment.set('comment_id', data[0]._id)\r",
+              "    return '_id' in data[0]\r",
+              "});\r",
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "type": "text",
+            "value": "application/json"
+          },
+          {
+            "key": "x-auth-token",
+            "type": "text",
+            "value": "{{token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"text\": \"This is a test comment\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/posts/comment/{{post_id}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "posts", "comment", "{{post_id}}"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Current Users Posts Fail",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "3be3559a-6e48-4d14-838a-8b9cf49eb076",
+            "exec": [
+              "pm.test('Get Current Users Posts should Fail', () => {\r",
+              "    pm.response.to.have.status(401)\r",
+              "})"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-auth-token",
+            "value": "dfgdfgdfgdfdfgdd",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3001/api/posts/user",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "posts", "user"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Current Users Posts Pass",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "e4a2e747-8f89-4220-ba85-baf009ee03a7",
+            "exec": [
+              "pm.test('Get Current Users Posts should PASS', () => {\r",
+              "    pm.response.to.have.status(200)\r",
+              "})"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-auth-token",
+            "value": "{{token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3001/api/posts/user",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "posts", "user"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create a Conversation Fail",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "f73c2c20-b9b0-423f-92c1-901fc613f9bf",
+            "exec": [
+              "pm.test('Create a Conversationi between USER1 & USER2 should Fail', () => {\r",
+              "    pm.response.to.have.status(400)\r",
+              "   \r",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-auth-token",
+            "type": "text",
+            "value": "{{token}}"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3001/api/profile/user/ffghdfhfhfgghfg/conversation",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "profile", "user", "ffghdfhfhfgghfg", "conversation"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create a Conversation Pass",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "be3dd51b-e99c-409c-a76a-5f0c29c93d2d",
+            "exec": [
+              "pm.test('Create a Conversationi between USER1 & USER2 should PASS', () => {\r",
+              "    pm.response.to.have.status(200)\r",
+              "   \r",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-auth-token",
+            "type": "text",
+            "value": "{{token}}"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3001/api/profile/user/{{user2_id}}/conversation",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "profile", "user", "{{user2_id}}", "conversation"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Logged in Users Messages Pass",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "5796da15-a339-4d86-bd8d-85591e5f679d",
+            "exec": [
+              "pm.test('Get Logged in User1 Messages Should PASS', () => {\r",
+              "    pm.response.to.have.status(200)\r",
+              "   \r",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-auth-token",
+            "type": "text",
+            "value": "{{token}}"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3001/api/profile/messages",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "profile", "messages"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Post Message Fail",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "90cb2794-40c1-4b7a-b7fe-8929ec67c90a",
+            "exec": [
+              "pm.test('Post a Message USER1 to USER2 Should FAIL', () => {\r",
+              "    pm.response.to.have.status(400)\r",
+              "   \r",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-auth-token",
+            "type": "text",
+            "value": "{{token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"message\": \"Hi this is Postman Test1\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/profile/sfdgsdgsdgsdfgsdg",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "profile", "sfdgsdgsdgsdfgsdg"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Post Message Pass",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "2aecfd8d-fee9-4372-8041-6354e032f373",
+            "exec": [
+              "pm.test('Post a Message USER1 to USER2 Should Pass', () => {\r",
+              "    pm.response.to.have.status(200)\r",
+              "   \r",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-auth-token",
+            "type": "text",
+            "value": "{{token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"message\": \"Hi this is Postman Test1\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/profile/{{user2_id}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "profile", "{{user2_id}}"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete a Comment Fail",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "78b0e171-0561-4d1e-93cb-be673b061e46",
+            "exec": [
+              "pm.test('Delete a Comment should FAIL', () => {\r",
+              "    pm.response.to.have.status(404)\r",
+              "})"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "type": "text",
+            "value": "application/json"
+          },
+          {
+            "key": "x-auth-token",
+            "type": "text",
+            "value": "{{token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/posts/comment/{{post_id}}/5f13a39ff8178572bc44fd71",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": [
+            "api",
+            "posts",
+            "comment",
+            "{{post_id}}",
+            "5f13a39ff8178572bc44fd71"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete a Comment Pass",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "c7ebea2f-1c41-4819-b4b0-152e6d6bd9bf",
+            "exec": [
+              "pm.test('Delete a Comment should PASS', () => {\r",
+              "    pm.response.to.have.status(200)\r",
+              "})"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "type": "text",
+            "value": "application/json"
+          },
+          {
+            "key": "x-auth-token",
+            "type": "text",
+            "value": "{{token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/posts/comment/{{post_id}}/{{comment_id}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "posts", "comment", "{{post_id}}", "{{comment_id}}"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete a Post Fail",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "c7830491-a0a9-4458-9dd5-ba20863eda7b",
+            "exec": [
+              "pm.test('Delete a post should FAIL', () => {\r",
+              "    pm.response.to.have.status(404)\r",
+              "})"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "x-auth-token",
+            "value": "{{token}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/posts/5f6a6b0fah4aa154004fb1a99",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "posts", "5f6a6b0fah4aa154004fb1a99"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete a Post Pass",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "1db71b46-d4d0-4f21-b133-bccd6e65bc5e",
+            "exec": [
+              "pm.test('Delete a post should PASS', () => {\r",
+              "    pm.response.to.have.status(200)\r",
+              "})"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "type": "text",
+            "value": "application/json"
+          },
+          {
+            "key": "x-auth-token",
+            "type": "text",
+            "value": "{{token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/posts/{{post_id}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "posts", "{{post_id}}"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Places Fail",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "b0a866de-9030-4599-8992-e1ff9867fdc1",
+            "exec": [
+              "pm.test('Delete Place should Fail', () => {\r",
+              "    pm.response.to.have.status(401)\r",
+              "})"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "conte",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "x-auth-token",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMTMxZjMyMGIxYWY1NmFlMDk4YWI4MiIsImlhdcCI6MTU5NTEwNDE0MywiZXhwIjoxNTk1MTA3NzQzfQ.ZFYz1XID2lEkr6DKadMKbE6QXmJ9XHGVrhHZRtar0KA",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/profile/places/{{place_id}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "profile", "places", "{{place_id}}"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Places Pass",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "79c53399-07e1-4963-a966-ee68d9e2345b",
+            "exec": [
+              "pm.test('Delete a Place should Pass', () => {\r",
+              "    pm.response.to.have.status(200)\r",
+              "})"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "conte",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "x-auth-token",
+            "value": "{{token}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"delete test\",\r\n    \"location\": \"delete test\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/profile/places/{{place_id}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "profile", "places", "{{place_id}}"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "DELETE User & Profile Pass",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "693fc881-c320-4004-b22f-d3802521e566",
+            "exec": [
+              "pm.test('Delete User should PASS', () => {\r",
+              "    pm.response.to.have.status(200)\r",
+              "})"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "x-auth-token",
+            "value": "{{token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3001/api/profile",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "profile"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "DELETE User2 & Profile2 Pass",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "14c3ebd6-77c1-44a7-88ef-f5e20db8dac3",
+            "exec": [
+              "pm.test('Delete User should PASS', () => {\r",
+              "    pm.response.to.have.status(200)\r",
+              "})"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "x-auth-token",
+            "type": "text",
+            "value": "{{token2}}"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3001/api/profile",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["api", "profile"]
+        }
+      },
+      "response": []
+    }
+  ],
+  "protocolProfileBehavior": {}
+}

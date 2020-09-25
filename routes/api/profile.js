@@ -288,7 +288,7 @@ router.delete('/places/:exp_id', isAuth, async (req, res, next) => {
 });
 module.exports = router;
 
-//POST Route api/profile/user/:user_id
+//POST Route api/profile/:user_id
 //Post a message
 
 router.post('/:user_id', isAuth, async (req, res, next) => {

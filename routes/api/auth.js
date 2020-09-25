@@ -33,20 +33,20 @@ router.post('/', loginValidators, async (req, res, next) => {
     //See if user exists
     let user = await User.findOne({ email });
     if (!user) {
-      throw new ExpressError(`Invalid Credentials`, 400);
+      throw new ExpressError(`Invalid Credentials`, 401);
     }
 
     //compare passwords
     const isValid = await bcrypt.compare(password, user.password);
 
     if (!isValid) {
-      throw new ExpressError(`Invalid Credentials `, 400);
+      throw new ExpressError(`Invalid Credentials `, 401);
     }
     //return JSONWEBTOKEN
 
     const token = createToken(user, '5d');
 
-    return res.status(201).json({ token });
+    return res.status(200).json({ token });
   } catch (e) {
     return next(e);
   }

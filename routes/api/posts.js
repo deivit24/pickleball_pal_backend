@@ -15,6 +15,7 @@ router.post('/', isAuth, postValidators, async (req, res, next) => {
   try {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
+      console.log(errors);
       throw new ExpressError(errors.array(), 400);
     }
     const user = await User.findById(req.user.id).select('-password');
@@ -32,7 +33,7 @@ router.post('/', isAuth, postValidators, async (req, res, next) => {
     });
     const post = await newPost.save();
 
-    return res.json(post);
+    return res.status(201).json(post);
   } catch (e) {
     next(e);
   }
@@ -62,6 +63,8 @@ router.get('/', isAuth, async (req, res, next) => {
   }
 });
 
+//GET ROUTE api/posts/user
+//Get Current users post
 router.get('/user', isAuth, async (req, res, next) => {
   try {
     const posts = await Post.find({ user: req.user.id }).sort({ date: -1 });
@@ -181,8 +184,8 @@ router.post('/comment/:id', isAuth, postValidators, async (req, res, next) => {
 
     post.comments.unshift(newComment);
     await post.save();
-
-    return res.json(post.comments);
+    console.log(post.comments);
+    return res.status(201).json(post.comments);
   } catch (e) {
     next(e);
   }
