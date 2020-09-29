@@ -46,10 +46,9 @@
           }
         },
         "url": {
-          "raw": "http://localhost:3001/api/users",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/users",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "users"],
           "query": [
             {
@@ -103,10 +102,9 @@
           }
         },
         "url": {
-          "raw": "http://localhost:3001/api/users",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/users",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "users"],
           "query": [
             {
@@ -149,10 +147,9 @@
           "raw": "{\r\n      \"email\": \"postman.test@hotmail.com\",\r\n      \"password\": \"david1992\"\r\n}"
         },
         "url": {
-          "raw": "http://localhost:3001/api/auth",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/auth",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "auth"]
         }
       },
@@ -195,10 +192,9 @@
           "raw": "{\r\n       \"email\": \"{{email}}\",\r\n      \"password\": \"{{password}}\"\r\n}"
         },
         "url": {
-          "raw": "http://localhost:3001/api/auth",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/auth",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "auth"]
         }
       },
@@ -253,10 +249,9 @@
           }
         },
         "url": {
-          "raw": "http://localhost:3001/api/users",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/users",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "users"],
           "query": [
             {
@@ -308,10 +303,9 @@
           }
         },
         "url": {
-          "raw": "http://localhost:3001/api/auth",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/auth",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "auth"],
           "query": [
             {
@@ -373,10 +367,9 @@
           }
         },
         "url": {
-          "raw": "http://localhost:3001/api/auth",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/auth",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "auth"],
           "query": [
             {
@@ -425,10 +418,9 @@
           "raw": "{\r\n    \r\n    \"years_playing\": 15,\r\n    \"gender\": \"male\",\r\n    \"bio\": \"my name is david salazar I like pickleball\",\r\n    \"active\": true,\r\n    \"playing_style\": \"I like to hit the ball hard\",\r\n    \"facebook\": \"www.facebook.com\",\r\n    \"instagram\": \"instagram\",\r\n    \"linkedin\": \"linkedin\"\r\n}"
         },
         "url": {
-          "raw": "http://localhost:3001/api/profile",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/profile",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "profile"]
         }
       },
@@ -470,10 +462,9 @@
           "raw": "{\r\n    \"level\" : 1.0,\r\n    \"years_playing\": 15,\r\n    \"gender\": \"male\",\r\n    \"bio\": \"my name is david salazar I like pickleball\",\r\n    \"active\": true,\r\n    \"playing_style\": \"I like to hit the ball hard\",\r\n    \"zip\": 78501,\r\n    \"facebook\": \"www.facebook.com\",\r\n    \"instagram\": \"instagram\",\r\n    \"linkedin\": \"linkedin\"\r\n}"
         },
         "url": {
-          "raw": "http://localhost:3001/api/profile",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/profile",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "profile"]
         }
       },
@@ -515,10 +506,9 @@
           "raw": "{\r\n    \"level\" : 3.0,\r\n    \"years_playing\": 15,\r\n    \"gender\": \"male\",\r\n    \"bio\": \"my name is test two I like pickleball\",\r\n    \"active\": true,\r\n    \"playing_style\": \"I like to hit the ball hard\",\r\n    \"zip\": 78501,\r\n    \"facebook\": \"www.facebook.com\",\r\n    \"instagram\": \"instagram\",\r\n    \"linkedin\": \"linkedin\"\r\n}"
         },
         "url": {
-          "raw": "http://localhost:3001/api/profile",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/profile",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "profile"]
         }
       },
@@ -571,10 +561,9 @@
           }
         },
         "url": {
-          "raw": "http://localhost:3001/api/auth",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/auth",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "auth"],
           "query": [
             {
@@ -627,10 +616,9 @@
           }
         },
         "url": {
-          "raw": "http://localhost:3001/api/profile/places",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/profile/places",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "profile", "places"]
         }
       },
@@ -682,10 +670,9 @@
           }
         },
         "url": {
-          "raw": "http://localhost:3001/api/profile/places",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/profile/places",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "profile", "places"]
         }
       },
@@ -717,10 +704,9 @@
           }
         ],
         "url": {
-          "raw": "http://localhost:3001/api/profile/me",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/profile/me",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "profile", "me"]
         }
       },
@@ -752,10 +738,9 @@
           }
         ],
         "url": {
-          "raw": "http://localhost:3001/api/profile/me",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/profile/me",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "profile", "me"]
         }
       },
@@ -782,10 +767,9 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost:3001/api/profile/user/fdfvddfv",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/profile/user/fdfvddfv",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "profile", "user", "fdfvddfv"]
         }
       },
@@ -812,10 +796,9 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost:3001/api/profile/user/{{user_id}}",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/profile/user/{{user_id}}",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "profile", "user", "{{user_id}}"]
         }
       },
@@ -842,10 +825,9 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost:3001/api/profile/user/{{user2_id}}",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/profile/user/{{user2_id}}",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "profile", "user", "{{user2_id}}"]
         }
       },
@@ -871,10 +853,9 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost:3001/api/profile",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/profile",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "profile"]
         }
       },
@@ -915,10 +896,9 @@
           "raw": "{\r\n    \"text\": \"\"\r\n}"
         },
         "url": {
-          "raw": "http://localhost:3001/api/posts",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/posts",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "posts"]
         }
       },
@@ -966,10 +946,9 @@
           "raw": "{\r\n    \"text\": \"Hello my name is Postman\"\r\n}"
         },
         "url": {
-          "raw": "http://localhost:3001/api/posts",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/posts",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "posts"]
         }
       },
@@ -1013,10 +992,9 @@
           "raw": ""
         },
         "url": {
-          "raw": "http://localhost:3001/api/posts",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/posts",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "posts"]
         }
       },
@@ -1060,10 +1038,9 @@
           "raw": ""
         },
         "url": {
-          "raw": "http://localhost:3001/api/posts",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/posts",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "posts"]
         }
       },
@@ -1107,10 +1084,9 @@
           "raw": ""
         },
         "url": {
-          "raw": "http://localhost:3001/api/posts/5f6a6acea4a54004fb1a98",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/posts/5f6a6acea4a54004fb1a98",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "posts", "5f6a6acea4a54004fb1a98"]
         }
       },
@@ -1154,10 +1130,9 @@
           "raw": ""
         },
         "url": {
-          "raw": "http://localhost:3001/api/posts/{{post_id}}",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/posts/{{post_id}}",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "posts", "{{post_id}}"]
         }
       },
@@ -1198,10 +1173,9 @@
           "raw": ""
         },
         "url": {
-          "raw": "http://localhost:3001/api/posts/like/5f6a6acesdfa4aa154004fb1a98",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/posts/like/5f6a6acesdfa4aa154004fb1a98",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "posts", "like", "5f6a6acesdfa4aa154004fb1a98"]
         }
       },
@@ -1242,10 +1216,9 @@
           "raw": ""
         },
         "url": {
-          "raw": "http://localhost:3001/api/posts/like/{{post_id}}",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/posts/like/{{post_id}}",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "posts", "like", "{{post_id}}"]
         }
       },
@@ -1286,10 +1259,9 @@
           "raw": ""
         },
         "url": {
-          "raw": "http://localhost:3001/api/posts/like/{{post_id}}",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/posts/like/{{post_id}}",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "posts", "like", "{{post_id}}"]
         }
       },
@@ -1330,10 +1302,9 @@
           "raw": ""
         },
         "url": {
-          "raw": "http://localhost:3001/api/posts/unlike/5f6a6acea4aaFD154004fb1a98",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/posts/unlike/5f6a6acea4aaFD154004fb1a98",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "posts", "unlike", "5f6a6acea4aaFD154004fb1a98"]
         }
       },
@@ -1374,10 +1345,9 @@
           "raw": ""
         },
         "url": {
-          "raw": "http://localhost:3001/api/posts/unlike/{{post_id}}",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/posts/unlike/{{post_id}}",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "posts", "unlike", "{{post_id}}"]
         }
       },
@@ -1418,10 +1388,9 @@
           "raw": "{\r\n    \"text\": \"\"\r\n}"
         },
         "url": {
-          "raw": "http://localhost:3001/api/posts/comment/{{post_id}}",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/posts/comment/{{post_id}}",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "posts", "comment", "{{post_id}}"]
         }
       },
@@ -1469,10 +1438,9 @@
           "raw": "{\r\n    \"text\": \"This is a test comment\"\r\n}"
         },
         "url": {
-          "raw": "http://localhost:3001/api/posts/comment/{{post_id}}",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/posts/comment/{{post_id}}",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "posts", "comment", "{{post_id}}"]
         }
       },
@@ -1504,10 +1472,9 @@
           }
         ],
         "url": {
-          "raw": "http://localhost:3001/api/posts/user",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/posts/user",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "posts", "user"]
         }
       },
@@ -1539,10 +1506,9 @@
           }
         ],
         "url": {
-          "raw": "http://localhost:3001/api/posts/user",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/posts/user",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "posts", "user"]
         }
       },
@@ -1575,10 +1541,9 @@
           }
         ],
         "url": {
-          "raw": "http://localhost:3001/api/profile/user/ffghdfhfhfgghfg/conversation",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/profile/user/ffghdfhfhfgghfg/conversation",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "profile", "user", "ffghdfhfhfgghfg", "conversation"]
         }
       },
@@ -1611,10 +1576,9 @@
           }
         ],
         "url": {
-          "raw": "http://localhost:3001/api/profile/user/{{user2_id}}/conversation",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/profile/user/{{user2_id}}/conversation",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "profile", "user", "{{user2_id}}", "conversation"]
         }
       },
@@ -1647,10 +1611,9 @@
           }
         ],
         "url": {
-          "raw": "http://localhost:3001/api/profile/messages",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/profile/messages",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "profile", "messages"]
         }
       },
@@ -1692,10 +1655,9 @@
           }
         },
         "url": {
-          "raw": "http://localhost:3001/api/profile/sfdgsdgsdgsdfgsdg",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/profile/sfdgsdgsdgsdfgsdg",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "profile", "sfdgsdgsdgsdfgsdg"]
         }
       },
@@ -1737,10 +1699,9 @@
           }
         },
         "url": {
-          "raw": "http://localhost:3001/api/profile/{{user2_id}}",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/profile/{{user2_id}}",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "profile", "{{user2_id}}"]
         }
       },
@@ -1781,10 +1742,9 @@
           "raw": ""
         },
         "url": {
-          "raw": "http://localhost:3001/api/posts/comment/{{post_id}}/5f13a39ff8178572bc44fd71",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/posts/comment/{{post_id}}/5f13a39ff8178572bc44fd71",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": [
             "api",
             "posts",
@@ -1831,10 +1791,9 @@
           "raw": ""
         },
         "url": {
-          "raw": "http://localhost:3001/api/posts/comment/{{post_id}}/{{comment_id}}",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/posts/comment/{{post_id}}/{{comment_id}}",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "posts", "comment", "{{post_id}}", "{{comment_id}}"]
         }
       },
@@ -1875,10 +1834,9 @@
           "raw": ""
         },
         "url": {
-          "raw": "http://localhost:3001/api/posts/5f6a6b0fah4aa154004fb1a99",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/posts/5f6a6b0fah4aa154004fb1a99",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "posts", "5f6a6b0fah4aa154004fb1a99"]
         }
       },
@@ -1919,10 +1877,9 @@
           "raw": ""
         },
         "url": {
-          "raw": "http://localhost:3001/api/posts/{{post_id}}",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/posts/{{post_id}}",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "posts", "{{post_id}}"]
         }
       },
@@ -1968,10 +1925,9 @@
           }
         },
         "url": {
-          "raw": "http://localhost:3001/api/profile/places/{{place_id}}",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/profile/places/{{place_id}}",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "profile", "places", "{{place_id}}"]
         }
       },
@@ -2017,10 +1973,9 @@
           }
         },
         "url": {
-          "raw": "http://localhost:3001/api/profile/places/{{place_id}}",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/profile/places/{{place_id}}",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "profile", "places", "{{place_id}}"]
         }
       },
@@ -2052,10 +2007,9 @@
           }
         ],
         "url": {
-          "raw": "http://localhost:3001/api/profile",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/profile",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "profile"]
         }
       },
@@ -2087,10 +2041,9 @@
           }
         ],
         "url": {
-          "raw": "http://localhost:3001/api/profile",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3001",
+          "raw": "https://pickleball-pal.herokuapp.com/api/profile",
+          "protocol": "https",
+          "host": ["pickleball-pal.herokuapp.com"],
           "path": ["api", "profile"]
         }
       },
